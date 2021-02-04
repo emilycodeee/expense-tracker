@@ -10,7 +10,7 @@ const recordSchema = new Schema({
     required: true
   },
   date: {
-    type: Number,
+    type: String,
     required: true
   },
   amount: {
@@ -19,4 +19,4 @@ const recordSchema = new Schema({
   }
 })
 
-module.exports = ('Record', recordSchema)
+module.exports = mongoose.model('Record', recordSchema)
