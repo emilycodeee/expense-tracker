@@ -4,15 +4,18 @@
       <label class="visually-hidden" for="autoSizingSelect">category</label>
       <select class="form-select" id="autoSizingSelect ">
         <option selected>類別</option>
-        <option value="1">One</option>
+        {{#each categoryItem}}
+        <option value="{{this.name_en}}">{{this.name}}</option>
+        {{/each}}
       </select>
     </div>
 
     <div class="col-9 d-flex justify-content-around align-items-center mt-2">
 
       <p class="text-center" style="font-size:28px;">總金額：</p>
-      <p style="color:#5A4D55; font-size:50px;">33450</p>
-      <button type="button" class="btn btn-warning text-center">New</button>
+      <p style="color:#5A4D55; font-size:50px;">{{totalAmount}}</p>
+      <a href="/records/new" class="btn btn-warning">新增
+      </a>
     </div>
     <div class="col-12">
       <ul class="list-group">
