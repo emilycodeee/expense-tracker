@@ -1,13 +1,16 @@
 <div class="container" style="width: 60%;">
   <div class="d-flex flex-column mt-4 " style="color:#5A4D55;">
     <div class="col-9 ">
-      <label class="visually-hidden" for="autoSizingSelect">category</label>
-      <select class="form-select" id="autoSizingSelect ">
-        <option selected>類別</option>
-        {{#each categoryItem}}
-        <option value="{{this.name_en}}">{{this.name}}</option>
-        {{/each}}
-      </select>
+      <form action="/" method="GET" class="d-flex justify-content-between">
+        <select class="form-select" id="autoSizingSelect " name="category" aria-label="select category">
+          <option value="" selected>全部</option>
+          {{#each categoryItem}}
+          <option value="{{this.name}}">{{this.name}}</option>
+          {{/each}}
+        </select>
+        <button type="submit" class="btn btn-primary ms-2"
+          style="border:1px solid #5A4D55;background:none;color:#5A4D55;"><i class="fas fa-funnel-dollar"></i></button>
+      </form>
     </div>
 
     <div class="col-9 d-flex justify-content-around align-items-center mt-2">
