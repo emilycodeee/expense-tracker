@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
     .then((item) => {
       categoryItem.push(...item)
 
-      // list render
+      // showlist render
       Record.find(selected)
         .lean()
         .then(records => {

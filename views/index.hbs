@@ -42,7 +42,7 @@
             <div class="col-3 d-flex justify-content-evenly ">
               <a href="/records/{{this._id}}/edit"><i class="fas fa-edit"
                   style="font-size: 20px;color:#5A4D55;"></i></a>
-              <form action="/records/{{this._id}}/delete" method="POST">
+              <form action="/records/{{this._id}}?_method=DELETE" method="POST">
                 <button type="submit" style="border:0px;background:none;color:#5A4D55;"><i
                     class="fas fa-trash-alt fa-lg"></i></button>
               </form>
