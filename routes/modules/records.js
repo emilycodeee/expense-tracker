@@ -24,7 +24,7 @@ router.post('/', (req, res) => {
 
 // get edit page
 
-router.get('/:id', (req, res) => {
+router.get('/:id/edit', (req, res) => {
   const id = req.params.id
   const categoryItem = []
   Category.find()
@@ -37,6 +37,22 @@ router.get('/:id', (req, res) => {
         .then(record => res.render('edit', { record, categoryItem }))
         .catch(error => console.log(error))
     })
+    .catch(error => console.log(error))
+})
+
+// post edit page
+router.post('/:id/edit', (req, res) => {
+  const id = req.params.id
+  const { name, date, category, amount } = req.body
+  return Record.findById(id)
+    .then((record) => {
+      record.name = name
+      record.date = date
+      record.category = category
+      record.amount = amount
+      return record.save()
+    })
+    .then(() => res.redirect('/'))
     .catch(error => console.log(error))
 })
 
