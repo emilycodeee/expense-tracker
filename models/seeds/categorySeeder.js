@@ -11,7 +11,7 @@ db.once('open', () => {
     .then(() => {
       console.log('insert data done...')
       return db.close()
-
+    }).then(() => {
+      console.log('done creating categoryseeder!')
     })
-    .then(() => console.log('done creating categoryseeder!'))
 })
