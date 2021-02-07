@@ -19,10 +19,19 @@ const dummyrecord = require('./dummyrecord.json').results
 // })
 
 db.once('open', () => {
-  Record.insertMany(dummyrecord)
-    .then(() => {
-      console.log('records done!')
-      db.close()
-    })
+  const records = []
+  dummyrecord.forEach(record => {
+    records.push(
+      Record.create({
+        name: record.name,
+        category: record.category,
+        date: record.date,
+        amount: record.amount
+      })
+    )
+  })
+  console.log('done creating recordseeder!')
+  Promise.all(records)
     .catch(error => console.log(error))
+    .finally(() => db.close())
 })
