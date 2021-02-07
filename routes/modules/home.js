@@ -9,6 +9,7 @@ const router = express.Router()
 // homepage render
 router.get('/', (req, res) => {
   const filterItem = req.query.category || ''
+  console.log(filterItem)
   const selected = {}
   if (filterItem) {
     selected.category = filterItem
@@ -26,6 +27,7 @@ router.get('/', (req, res) => {
       // showlist render
       Record.find(selected)
         .lean()
+        .sort({ date: 'asc' })
         .then(records => {
           records.forEach(record => {
             totalAmount += record.amount

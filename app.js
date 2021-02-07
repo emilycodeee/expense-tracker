@@ -1,7 +1,9 @@
-// require packages used in the project
+// express packages 
 const express = require('express')
 const exphbs = require('express-handlebars')
 const app = express()
+
+// require packages used in the project
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 

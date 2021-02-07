@@ -2,14 +2,12 @@
   <div class="d-flex flex-column mt-4 " style="color:#5A4D55;">
     <div class="col-9 ">
       <form action="/" method="GET" class="d-flex justify-content-between">
-        <select class="form-select" id="autoSizingSelect " name="category" aria-label="select category">
+        <select class="form-select" id="category" name="category" onchange="submit();" data-selected="{{filterItem}}">
           <option value="" selected>全部</option>
           {{#each categoryItem}}
           <option value="{{this.name}}">{{this.name}}</option>
           {{/each}}
         </select>
-        <button type="submit" class="btn btn-primary ms-2"
-          style="border:1px solid #5A4D55;background:none;color:#5A4D55;"><i class="fas fa-funnel-dollar"></i></button>
       </form>
     </div>
 
