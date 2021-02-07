@@ -18,6 +18,7 @@ require('./config/mongoose')
 // body parser && method-override
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
+app.use(express.static('public'))
 
 // routes setting - Read
 app.use(routes)
