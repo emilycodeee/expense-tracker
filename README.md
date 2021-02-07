@@ -11,9 +11,9 @@
   - 可選擇下拉選單篩選支出類別並看見類別支出總額
 
 ## 專案畫面
-![home] (/public/photos/home.jpg)
-![new] (/public/photos/new.jpg)
-![edit] (/public/photos/edit.jpg)
+![home](/public/photos/home.jpg)
+![new](/public/photos/new.jpg)
+![edit](/public/photos/edit.jpg)
 
 ## 環境建置與需求 (prerequisites)
 ```
