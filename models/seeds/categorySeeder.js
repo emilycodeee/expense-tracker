@@ -3,12 +3,15 @@ const Category = require('../category')
 const categoryList = require('./category.json').results
 
 db.once('open', () => {
+  const categories = []
   categoryList.forEach(categoryItem => {
-    Category.create({
-      name: categoryItem.name,
-      name_en: categoryItem.name_en,
-      icon: categoryItem.icon
-    })
+    categories.push(categoryItem)
   })
-  console.log('done creating categoryseeder!')
+  Category.create(categories)
+    .then(() => {
+      console.log('insert data done...')
+      return db.close()
+
+    })
+    .then(() => console.log('done creating categoryseeder!'))
 })

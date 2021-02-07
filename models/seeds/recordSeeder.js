@@ -3,13 +3,14 @@ const Record = require('../record')
 const dummyrecord = require('./dummyrecord.json').results
 
 db.once('open', () => {
-  dummyrecord.forEach(recorditem => {
-    Record.create({
-      name: recorditem.name,
-      category: recorditem.category,
-      date: recorditem.date,
-      amount: recorditem.amount
-    })
+  const records = []
+  dummyrecord.forEach(recordItem => {
+    records.push(recordItem)
   })
-  console.log('done creating recordseeder!')
+  Record.create(records)
+    .then(() => {
+      console.log('insert data done...')
+      return db.close()
+    })
+    .then(() => console.log('done creating recordseeder!'))
 })
