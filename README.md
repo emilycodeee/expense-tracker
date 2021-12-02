@@ -1,4 +1,4 @@
-# 餐廳清單(Restaurant List)
+# 記帳追蹤 (Expense Tracker)
 
   - 此專案使用 Node.js + Express + MongoDB 
   - 可供使用者分類、瀏覽、新增、編輯、刪除支出紀錄。
