@@ -7,7 +7,7 @@ A basic web app to provide CRUD feature for tracing expenses.
 
 ## Features
 
-- Show all expenses at once at landing page and see the total amount of expenses.
+- Show all expenses at landing page and display the total amount of expenses.
 - You can add an expense.
 - You can edit category after adding.
 - You can delete any expenditure.
